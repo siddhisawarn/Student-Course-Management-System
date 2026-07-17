@@ -1,36 +1,35 @@
-public class Course {
+public class Person {
 
-    private String courseName;
-    private int credits;
-
-
-    public Course(String courseName, int credits){
-
-        this.courseName = courseName;
-        this.credits = credits;
-
-    }
+    private String name;
+    private int id;
 
 
-    public String getCourseName(){
+    public Person(String name, int id) {
 
-        return courseName;
+        this.name = name;
+        this.id = id;
 
     }
 
 
-    public int getCredits(){
+    public String getName() {
 
-        return credits;
+        return name;
 
     }
 
 
-    public void displayCourse(){
+    public int getId() {
 
-        System.out.println(
-            courseName + " - Credits: " + credits
-        );
+        return id;
+
+    }
+
+
+    public void displayInfo() {
+
+        System.out.println("Name: " + name);
+        System.out.println("ID: " + id);
 
     }
 
