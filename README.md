@@ -53,10 +53,10 @@ src/
 1. The application starts from `Main.java`.
 2. A student object is created using the `Student` class.
 3. Users can view student information through an interactive menu.
-4. Users can add courses with credits and grades.
+4. Users can add courses with course name, credits, and grades.
 5. The system calculates GPA based on course credits and grades.
-6. Course data is saved when the user exits.
-7. Saved course data is loaded when the application starts again.
+6. Course data is saved when the user exits the application.
+7. Previously saved courses are loaded when the application starts again.
 
 ## Example Output
 
@@ -79,9 +79,8 @@ Choose an option:
 - Add user authentication
 - Create a graphical user interface (GUI)
 - Improve input validation
+- Add search and update features
 
 ## Author
-
-Siddhi Sawarn
 
 Siddhi Sawarn
