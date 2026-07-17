@@ -37,7 +37,6 @@ Separate classes handle different responsibilities:
 - `StudentManager` - Controls the interactive menu system
 
 ## Project Structure
-
 ```text
 src/
 │
@@ -52,12 +51,12 @@ src/
 ## How It Works
 
 1. The application starts from `Main.java`.
-2. A student profile is created using object-oriented design.
-3. Users can view student information and courses.
-4. Users can add new courses with credits and grades.
-5. The system calculates GPA based on course performance.
-6. Course information is saved when the application exits.
-7. Previously saved course data is loaded when the application starts again.
+2. A student object is created using the `Student` class.
+3. Users can view student information through an interactive menu.
+4. Users can add courses with credits and grades.
+5. The system calculates GPA based on course credits and grades.
+6. Course data is saved when the user exits.
+7. Saved course data is loaded when the application starts again.
 
 ## Example Output
 
@@ -80,8 +79,9 @@ Choose an option:
 - Add user authentication
 - Create a graphical user interface (GUI)
 - Improve input validation
-- Add search and update features
 
 ## Author
+
+Siddhi Sawarn
 
 Siddhi Sawarn
