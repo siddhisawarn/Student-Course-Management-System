@@ -1,26 +1,11 @@
-import java.util.ArrayList;
+public void displayCourses(){
 
+    System.out.println("Courses:");
 
-public class Student extends Person {
+    for(Course course : courses){
 
-
-    private ArrayList<Course> courses;
-
-
-    public Student(String name, int id){
-
-        super(name,id);
-
-        courses = new ArrayList<>();
+        course.displayCourse();
 
     }
-
-
-    public void addCourse(Course course){
-
-        courses.add(course);
-
-    }
-
 
 }
