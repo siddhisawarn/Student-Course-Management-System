@@ -1,5 +1,6 @@
 public class Main {
 
+
     public static void main(String[] args) {
 
 
@@ -7,41 +8,53 @@ public class Main {
         new Student("Siddhi Sawarn", 101);
 
 
-        Course javaCourse =
+
+        Course oop =
         new Course(
             "Object Oriented Programming",
-            4
+            4,
+            "A"
         );
 
 
-        Course dataCourse =
+        Course dsa =
         new Course(
             "Data Structures",
-            3
+            3,
+            "B"
         );
 
 
-        student.addCourse(javaCourse);
+        Course java =
+        new Course(
+            "Java Programming",
+            3,
+            "A"
+        );
 
-        student.addCourse(dataCourse);
+
+
+        student.addCourse(oop);
+
+        student.addCourse(dsa);
+
+        student.addCourse(java);
+
 
 
         System.out.println("Student Information");
 
-        System.out.println(
-            "Name: " + student.getName()
-        );
-
-
-        System.out.println(
-            "ID: " + student.getId()
-        );
-
-
-        System.out.println();
+        student.displayInfo();
 
 
         student.displayCourses();
 
+
+
+        System.out.println(
+            "\nGPA: " + student.calculateGPA()
+        );
+
     }
+
 }
