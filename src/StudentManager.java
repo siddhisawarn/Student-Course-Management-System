@@ -1,176 +1,83 @@
-import java.util.Scanner;
+import java.util.ArrayList;
 
 
-public class StudentManager {
+public class Student extends Person {
 
 
-    private Student student;
-    private Scanner scanner;
+    private ArrayList<Course> courses;
 
 
 
-    public StudentManager(Student student){
+    public Student(String name, int id) {
 
-        this.student = student;
-        scanner = new Scanner(System.in);
+        super(name, id);
+
+        courses = new ArrayList<>();
 
     }
 
 
 
-    public void start(){
+    public void addCourse(Course course) {
 
+        courses.add(course);
 
-        int choice;
+    }
 
 
 
-        do{
+    public void displayCourses() {
 
+        System.out.println("\nCourses:");
 
-            System.out.println("\nStudent Course Management System");
+        for (Course course : courses) {
 
-            System.out.println("1. View Student Information");
+            course.displayCourse();
 
-            System.out.println("2. View Courses");
+        }
 
-            System.out.println("3. Add Course");
+    }
 
-            System.out.println("4. Calculate GPA");
 
-            System.out.println("5. Exit");
 
+    public double calculateGPA() {
 
+        double totalPoints = 0;
 
-            System.out.print("Choose an option: ");
+        int totalCredits = 0;
 
-            choice = scanner.nextInt();
 
 
+        for (Course course : courses) {
 
-            switch(choice){
 
+            totalPoints += 
+            course.getGradePoint() * course.getCredits();
 
 
-                case 1:
+            totalCredits += course.getCredits();
 
+        }
 
-                    student.displayInfo();
 
 
-                    break;
+        if (totalCredits == 0) {
 
+            return 0;
 
+        }
 
 
-                case 2:
 
+        return totalPoints / totalCredits;
 
-                    student.displayCourses();
+    }
 
 
-                    break;
 
+    public ArrayList<Course> getCourses() {
 
-
-
-                case 3:
-
-
-                    scanner.nextLine();
-
-
-                    System.out.print("Enter course name: ");
-
-                    String name = scanner.nextLine();
-
-
-
-                    System.out.print("Enter credits: ");
-
-                    int credits = scanner.nextInt();
-
-
-
-                    scanner.nextLine();
-
-
-
-                    System.out.print("Enter grade: ");
-
-                    String grade = scanner.nextLine();
-
-
-
-                    Course newCourse =
-
-                    new Course(
-                        name,
-                        credits,
-                        grade
-                    );
-
-
-
-                    student.addCourse(newCourse);
-
-
-
-                    System.out.println(
-                        "Course added successfully!"
-                    );
-
-
-
-                    break;
-
-
-
-
-
-                case 4:
-
-
-                    System.out.println(
-                        "GPA: "
-                        + student.calculateGPA()
-                    );
-
-
-                    break;
-
-
-
-
-
-                case 5:
-
-
-                    System.out.println(
-                        "Goodbye!"
-                    );
-
-
-                    break;
-
-
-
-
-
-                default:
-
-
-                    System.out.println(
-                        "Invalid option"
-                    );
-
-            }
-
-
-
-        }while(choice != 5);
-
-
+        return courses;
 
     }
 
