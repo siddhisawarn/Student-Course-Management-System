@@ -1,83 +1,182 @@
-import java.util.ArrayList;
+import java.util.Scanner;
 
 
-public class Student extends Person {
+public class StudentManager {
 
 
-    private ArrayList<Course> courses;
-
-
-
-    public Student(String name, int id) {
-
-        super(name, id);
-
-        courses = new ArrayList<>();
-
-    }
+    private Student student;
+    private Scanner scanner;
 
 
 
-    public void addCourse(Course course) {
+    public StudentManager(Student student) {
 
-        courses.add(course);
+        this.student = student;
+        scanner = new Scanner(System.in);
 
     }
 
 
 
-    public void displayCourses() {
+    public void start() {
 
-        System.out.println("\nCourses:");
 
-        for (Course course : courses) {
-
-            course.displayCourse();
-
-        }
-
-    }
+        int choice;
 
 
 
-    public double calculateGPA() {
-
-        double totalPoints = 0;
-
-        int totalCredits = 0;
+        do {
 
 
+            System.out.println("\nStudent Course Management System");
 
-        for (Course course : courses) {
+            System.out.println("1. View Student Information");
 
+            System.out.println("2. View Courses");
 
-            totalPoints += 
-            course.getGradePoint() * course.getCredits();
+            System.out.println("3. Add Course");
 
+            System.out.println("4. Calculate GPA");
 
-            totalCredits += course.getCredits();
-
-        }
+            System.out.println("5. Exit");
 
 
 
-        if (totalCredits == 0) {
+            System.out.print("Choose an option: ");
 
-            return 0;
-
-        }
+            choice = scanner.nextInt();
 
 
 
-        return totalPoints / totalCredits;
-
-    }
+            switch(choice) {
 
 
 
-    public ArrayList<Course> getCourses() {
+                case 1:
 
-        return courses;
+
+                    student.displayInfo();
+
+
+                    break;
+
+
+
+
+                case 2:
+
+
+                    student.displayCourses();
+
+
+                    break;
+
+
+
+
+                case 3:
+
+
+                    scanner.nextLine();
+
+
+                    System.out.print("Enter course name: ");
+
+                    String name = scanner.nextLine();
+
+
+
+                    System.out.print("Enter credits: ");
+
+                    int credits = scanner.nextInt();
+
+
+
+                    scanner.nextLine();
+
+
+
+                    System.out.print("Enter grade: ");
+
+                    String grade = scanner.nextLine();
+
+
+
+                    Course newCourse =
+                    new Course(
+                        name,
+                        credits,
+                        grade
+                    );
+
+
+
+                    student.addCourse(newCourse);
+
+
+
+                    System.out.println(
+                        "Course added successfully!"
+                    );
+
+
+                    break;
+
+
+
+
+                case 4:
+
+
+                    System.out.println(
+                        "GPA: "
+                        + student.calculateGPA()
+                    );
+
+
+                    break;
+
+
+
+
+                case 5:
+
+
+                    FileManager.saveCourses(
+                        student.getCourses()
+                    );
+
+
+                    System.out.println(
+                        "Courses saved successfully!"
+                    );
+
+
+                    System.out.println(
+                        "Goodbye!"
+                    );
+
+
+                    break;
+
+
+
+
+                default:
+
+
+                    System.out.println(
+                        "Invalid option"
+                    );
+
+
+            }
+
+
+
+        } while(choice != 5);
+
+
 
     }
 
