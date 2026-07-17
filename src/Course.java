@@ -25,4 +25,13 @@ public class Course {
 
     }
 
+
+    public void displayCourse(){
+
+        System.out.println(
+            courseName + " - Credits: " + credits
+        );
+
+    }
+
 }
