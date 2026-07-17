@@ -29,10 +29,10 @@ Private variables are used with public getter methods to protect and control acc
 The `Student` class extends the `Person` class to reuse common attributes such as name and ID.
 
 ### Abstraction
-Different classes handle different responsibilities:
+Separate classes handle different responsibilities:
 
-- `Student` - Manages student information and courses
-- `Course` - Stores course details, credits, and grades
+- `Student` - Manages student information and enrolled courses
+- `Course` - Stores course name, credits, and grades
 - `FileManager` - Handles saving and loading course data
 - `StudentManager` - Controls the interactive menu system
 
@@ -52,12 +52,12 @@ src/
 ## How It Works
 
 1. The application starts from `Main.java`.
-2. A student object is created using the `Student` class.
-3. Users can view student information through the menu.
-4. Users can add courses with credits and grades.
-5. The system calculates GPA based on completed courses.
-6. Course data is saved to a file when the user exits.
-7. Saved courses are loaded automatically when the application starts again.
+2. A student profile is created using object-oriented design.
+3. Users can view student information and courses.
+4. Users can add new courses with credits and grades.
+5. The system calculates GPA based on course performance.
+6. Course information is saved when the application exits.
+7. Previously saved course data is loaded when the application starts again.
 
 ## Example Output
 
