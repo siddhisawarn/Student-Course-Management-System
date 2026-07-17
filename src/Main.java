@@ -5,7 +5,7 @@ public class Main {
 
 
         Student student =
-        new Student("Siddhi Sawarn", 101);
+        new Student("Siddhi Sawarn",101);
 
 
 
@@ -33,7 +33,6 @@ public class Main {
         );
 
 
-
         student.addCourse(oop);
 
         student.addCourse(dsa);
@@ -42,18 +41,12 @@ public class Main {
 
 
 
-        System.out.println("Student Information");
-
-        student.displayInfo();
-
-
-        student.displayCourses();
+        StudentManager manager =
+        new StudentManager(student);
 
 
+        manager.start();
 
-        System.out.println(
-            "\nGPA: " + student.calculateGPA()
-        );
 
     }
 
