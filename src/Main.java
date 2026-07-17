@@ -5,7 +5,7 @@ public class Main {
 
 
         Student student =
-        new Student("Siddhi Sawarn",101);
+        new Student("Siddhi Sawarn", 101);
 
 
 
@@ -31,6 +31,7 @@ public class Main {
             3,
             "A"
         );
+
 
 
         student.addCourse(oop);
